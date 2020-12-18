@@ -6,13 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Three = require('./Three');
-
-var _Three2 = _interopRequireDefault(_Three);
-
 var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _Three = require('./Three');
+
+var _Three2 = _interopRequireDefault(_Three);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63,6 +63,14 @@ var Paint = function () {
       var directionalLightObj = this.scene.getObjectByName(DIRECTIONAL_LIGHT);
       if (directionalLightObj) {
         this.scene.remove(directionalLightObj);
+      }
+      var directionalLightObj0 = this.scene.getObjectByName(DIRECTIONAL_LIGHT + '0');
+      if (directionalLightObj0) {
+        this.scene.remove(directionalLightObj0);
+      }
+      var directionalLightObj1 = this.scene.getObjectByName(DIRECTIONAL_LIGHT + '1');
+      if (directionalLightObj1) {
+        this.scene.remove(directionalLightObj1);
       }
 
       if (this.animationRequestId) {

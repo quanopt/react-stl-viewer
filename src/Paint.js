@@ -1,5 +1,5 @@
-import THREE from './Three';
 import ReactDOM from 'react-dom';
+import THREE from './Three';
 let OrbitControls = require('three-orbit-controls')(THREE);
 
 const DIRECTIONAL_LIGHT = 'directionalLight';
@@ -39,6 +39,14 @@ class Paint {
     const directionalLightObj = this.scene.getObjectByName(DIRECTIONAL_LIGHT);
     if (directionalLightObj) {
       this.scene.remove(directionalLightObj);
+    }
+    const directionalLightObj0 = this.scene.getObjectByName(DIRECTIONAL_LIGHT + '0');
+    if (directionalLightObj0) {
+      this.scene.remove(directionalLightObj0);
+    }
+    const directionalLightObj1 = this.scene.getObjectByName(DIRECTIONAL_LIGHT + '1');
+    if (directionalLightObj1) {
+      this.scene.remove(directionalLightObj1);
     }
 
     if (this.animationRequestId) {
